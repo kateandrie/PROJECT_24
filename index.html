@@ -1,5 +1,193 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echter's Nursery & Garden Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <body>
+        <header class="header">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Echter's Nursery Logo">
+            </div>
+            <div class="nav-search-container">
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#garden-talk">Garden Talk</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div id="search-icon">
+                    <img src="./images/search.png" alt="Search" onclick="toggleSearch()">
+                </div>
+                <div class="search-bar hidden">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
+        </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Echter’s Nursery & Garden Center</h1>
+            <p>extraordinary plants, flowers, & garden decor</p>
+            <div class="hero-nav">
+                <a href="#">Events & Classes</a>
+                <a href="#">Plants</a>
+                <a href="#">Products & Services</a>
+                <a href="#">Decor</a>
+                <a href="#">Learn More</a>
+                <a href="#">Gift Cards</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section: Growing Now -->
+    <section class="growing-now">
+        <div class="container-fluid p-0">
+            <h2 class="text-center my-4">Growing Now</h2>
+            <div id="growingNowCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/growing1.jpg" class="d-block w-100" alt="Plant Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/growing2.png" class="d-block w-100" alt="Plant Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/growing3.png" class="d-block w-100" alt="Plant Image 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="path/to/image4.jpg" class="d-block w-100" alt="Plant Image 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="path/to/image5.jpg" class="d-block w-100" alt="Plant Image 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="path/to/image6.jpg" class="d-block w-100" alt="Plant Image 6">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#growingNowCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#growingNowCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="growingNowCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+    
+
+    <!-- Content Section: Gardening in Colorado -->
+    <section class="gardening-colorado">
+        <div class="container">
+            <h2>Gardening in Colorado</h2>
+            <div class="grid">
+                <div class="grid-item"><img src="path/to/image3.jpg" alt="Grass"></div>
+                <div class="grid-item"><img src="path/to/image4.jpg" alt="Succulents"></div>
+                <div class="grid-item"><img src="path/to/image5.jpg" alt="Succulents"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section: Shop Our Summer Sale -->
+    <section class="summer-sale">
+        <div class="container">
+            <h2>Shop Our Summer Sale</h2>
+            <div class="grid">
+                <div class="grid-item"><img src="path/to/image6.jpg" alt="Outdoor Furniture"></div>
+                <div class="grid-item"><img src="path/to/image7.jpg" alt="Flower"></div>
+                <div class="grid-item"><img src="path/to/image8.jpg" alt="Plant"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <div class="signup-form">
+        <h2>Sign Up for Our Rewards Program,<br>Plant Perks!</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone Number" required>
+            
+            <p>Would you like to receive emails about our coupons and upcoming sales?</p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="coupons" value="yes" required> yes
+                </label>
+                <label>
+                    <input type="radio" name="coupons" value="no" required> no
+                </label>
+            </div>
+            
+            <p>Would you like to receive our newsletter in your inbox?</p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="newsletter" value="yes" required> yes
+                </label>
+                <label>
+                    <input type="radio" name="newsletter" value="no" required> no
+                </label>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="footer-info">
+            <ul>
+                <li><a href="#">Our Hours</a></li>
+                <li><a href="#">Work at Echter’s</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-logo">
+            <img src="./images/footer logo.png" alt="Echter's Logo">
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleSearch() {
+        const searchBar = document.querySelector('.search-bar');
+        searchBar.classList.toggle('hidden');
+    }
+
+    document.addEventListener('click', function(event) {
+        const searchBar = document.querySelector('.search-bar');
+        const searchIcon = document.getElementById('search-icon');
+
+        if (!searchBar.classList.contains('hidden') && !searchBar.contains(event.target) && !searchIcon.contains(event.target)) {
+            searchBar.classList.add('hidden');
+        }
+    });
+</script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
