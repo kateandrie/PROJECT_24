@@ -16,3 +16,20 @@ document.getElementById('search-icon').addEventListener('click', function(event)
 });
 
 
+document.querySelectorAll('.dropdown-toggle').forEach(item => {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+        let dropdown = this.nextElementSibling;
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    });
+});
+
+window.addEventListener('click', function (e) {
+    if (!e.target.matches('.dropdown-toggle')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }
+});
+
+
