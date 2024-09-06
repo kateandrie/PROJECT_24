@@ -27,6 +27,7 @@ body {
   padding: 40px 60px;
   background-color: #20302c;
   position: relative;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .logo img {
@@ -38,6 +39,7 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .nav ul {
@@ -51,17 +53,21 @@ body {
 .nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 20px;
-  transition: color 0.3s ease;
+  font-size: 24px; 
+  padding: 12px 24px; 
+  background-color: #20302c; 
+  border-radius: 30px; 
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav ul li a:hover {
   color: #f1c40f;
+  background-color: #354a42; 
 }
 
 #search-icon img {
-  width: 24px;
-  height: 24px;
+  width: 30px; 
+  height: 30px;
   cursor: pointer;
 }
 
@@ -77,9 +83,9 @@ body {
 }
 
 .search-bar input {
-  width: 350px;
-  padding: 8px;
-  border: 1px solid #ccc;
+  width: 600px;
+  padding: 15px;
+  border: 1px solid #303030;
   border-radius: 3px;
 }
 
@@ -111,77 +117,95 @@ body {
   gap: 30px;
 }
 
+.dropdown-toggle {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #4e6e50;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-radius: 30px; 
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background-color: #e0e0e0;
+}
+
 /* Dropdown */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-toggle {
-  background-color: #384c42;
-  color: white;
-  padding: 15px 30px; 
+/* Dropdown Toggle */
+.dropdown .dropdown-toggle {
+  font-size: 1.2em;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  display: inline-block;
+  color: white;
+  padding: 10px 20px;
+  background-color: #20302c; /* Updated color */
+  border-radius: 30px; 
   transition: background-color 0.3s ease;
 }
 
-.dropdown-toggle:hover {
+.dropdown .dropdown-toggle:hover {
   background-color: #2b3734;
-  color:  #f1c40f;
- 
 }
 
-.dropdown-menu {
+/* Dropdown Menu */
+/* Dropdown Menu */
+.dropdown .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  right: 0 !important; 
-  background-color: #f8f8f8;
-  width: 400px; 
+  background-color: #20302c; 
+  width: 300px; 
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   z-index: 1;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  padding-left: 40px; 
+  padding: 10px; 
+  box-sizing: border-box;
+  border-radius: 10px; 
 }
 
-.dropdown-content {
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown .dropdown-content {
   display: flex;
-  align-items: center;
+  flex-direction: column; 
   width: 100%;
+  font-size: 16px; 
+  color: white;
 }
 
-.dropdown-img {
-  width: 200px; 
+.dropdown .dropdown-img {
+  width: 100%; 
   height: auto;
-  margin-right: 40px; 
   border-radius: 10px;
 }
 
-.dropdown-links {
+.dropdown .dropdown-links {
   display: flex;
   flex-direction: column;
 }
 
-.dropdown-links a {
-  padding: 15px 0; 
-  color: #333;
+.dropdown .dropdown-links a {
+  padding: 10px;
+  color: white; /* Updated text color */
   text-decoration: none;
   font-weight: 500;
-  font-size: 16px; 
+  font-size: 16px; /* Adjusted font size */
+  border-bottom: 1px solid #4e6e50; /* Divider between items */
 }
 
-.dropdown-links a:hover {
-  color: #2b3734;
+.dropdown .dropdown-links a:hover {
+  color: #f1c40f; /* Highlight color on hover */
 }
 
-.dropdown:hover .dropdown-menu {
-  display: flex;
+.dropdown .dropdown-links a:last-child {
+  border-bottom: none; /* Remove divider from last item */
 }
 
 
@@ -198,20 +222,27 @@ body {
   margin-bottom: 30px;
 }
 
+/* Carousel Item */
+.carousel {
+  overflow: hidden;
+  border-radius: 30px; 
+}
+
 .carousel-item {
   position: relative;
-  justify-content: center;
+  border-radius: 30px; 
 }
 
 .carousel-item img {
-  max-height: 500px; 
-  object-fit: cover;
+  max-height: 500px;
+  object-fit: cover; 
   width: 100%;
+  border-radius: 30px; 
 }
 
 .carousel-item::before {
   content: "";
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -227,13 +258,21 @@ body {
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  z-index: 2;
-  max-width: 85%;
-  padding: 20px;
-  box-sizing: border-box;
-  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 10px; 
+  width: 70% !important; 
+  padding: 30px; 
+  box-sizing: border-box; 
+  word-wrap: break-word;
+  overflow: hidden; 
+}
+
+.carousel-caption h3 {
+  font-size: 2em; 
+}
+
+.carousel-caption p {
+  font-size: 1.2em; 
 }
 
 /* Gardening in CO Section */
@@ -254,6 +293,7 @@ body {
   max-height: 720px; 
   object-fit: cover; 
   margin-bottom: 20px;
+  border-radius: 30px; 
 }
 
 .gardening-in-co .row {
@@ -271,9 +311,8 @@ body {
   height: auto;
   margin-bottom: 20px; 
   padding-left: 10px;
+  border-radius: 30px; 
 }
-
-
 
 /* Shop Our Summer Sale Section */
 h2 {
@@ -288,6 +327,7 @@ h2 {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
+  border-radius: 30px; 
 }
 
 /* Newsletter Signup Section */
@@ -305,11 +345,17 @@ h2 {
 
 .signup-form input,
 .signup-form button {
-  width: 70%;
+  width: 50%;
   padding: 15px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.signup-form button {
+  width: 10%; 
+  padding: 10px;
+  border-radius: 30px;
 }
 
 .signup-form button {
@@ -322,7 +368,6 @@ h2 {
 .signup-form button:hover {
   background-color: #2b3734;
   color: #f1c40f;
-
 }
 
 .radio-group {
@@ -337,67 +382,144 @@ h2 {
   color: #333;
 }
 
-
-
-
 /* Footer Section */
 footer {
-    background-color: #20302c;
-    color: white;
-    padding: 40px 0;
-    text-align: center;
+  background-color: #20302c;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
 }
 
 .footer-info ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
 .footer-info ul li {
-    display: inline;
-    margin: 0 15px;
+  display: inline;
+  margin: 0 15px;
 }
 
 .footer-info ul li a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+  font-size: 24px; 
+  padding: 12px 24px; 
+  background-color: #20302c; 
+  border-radius: 30px; 
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-info ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+  color: #f1c40f;
 }
 
 .footer-logo img {
-    width: 150px;
-    margin: 20px 0;
+  max-width: 400px;
+  margin: 20px 0;
 }
 
 .social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 24px;
-    text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
 }
 
 .social-icons a:hover {
-    color: #f1c40f;
+  color: #f1c40f;
 }
 
 .footer-button {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .footer-button .btn {
-    background-color: #4e6e50;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+  background-color: #4e6e50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .footer-button .btn:hover {
-    background-color: #2b3734;
+  background-color: #2b3734;
+}
+
+/* Media Queries */
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-search-container {
+    gap: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-bar {
+    width: 100%;
+    right: auto;
+    top: auto;
+    background-color: #f1f1f1;
+  }
+
+  .search-bar input {
+    width: calc(100% - 30px);
+  }
+
+  .dropdown-menu {
+    width: 100%; 
+    padding: 20px;
+  }
+
+  .carousel-item img {
+    max-height: 300px;
+  }
+
+  .signup-form input,
+  .signup-form button {
+    width: 80%;
+  }
+
+  .signup-form button {
+    width: auto;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .header {
+    padding: 30px;
+  }
+
+  .nav-search-container {
+    gap: 20px;
+  }
+
+  .search-bar {
+    width: 80%;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .carousel-item img {
+    max-height: 400px;
+  }
 }
