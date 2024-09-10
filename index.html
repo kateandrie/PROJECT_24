@@ -3,6 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Overlay</title>
+    <style>
+      /* CSS styles */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+  
+      .overlay-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        position: relative;
+      }
+  
+      .overlay-content h2 {
+        margin-top: 0;
+      }
+  
+      .overlay-content .radio-group {
+        margin: 10px 0;
+      }
+  
+      .overlay-content .radio-group label {
+        display: block;
+        margin: 5px 0;
+      }
+  
+      .overlay-content .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+  
+      /* Hide overlay initially */
+      .hidden {
+        display: none;
+      }
+  
+      #newsletter-form input,
+      #newsletter-form button {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      #newsletter-form button {
+        background-color: #384c42;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+      }
+  
+      #newsletter-form button:hover {
+        background-color: #2b3734;
+        color: #f1c40f;
+      }
+    </style>
+  </head>
+  <body>
     <title>Echter's Nursery & Garden Center</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
@@ -23,6 +97,7 @@
             <nav class="nav">
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#newsletter" id="newsletter-btn">Newsletter</a></li>
                     <li><a href="#garden-talk">Garden Talk</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -35,6 +110,40 @@
             </div>
         </div>
     </header>
+
+    <!-- Newsletter Overlay Form -->
+<div id="newsletter-overlay" class="overlay hidden">
+  <div class="overlay-content">
+      <h2>Sign Up for Our Newsletter!</h2>
+      <form id="newsletter-form">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+
+          <p>Would you like to receive emails about our coupons and upcoming sales?</p>
+          <div class="radio-group">
+              <label>
+                  <input type="radio" name="coupons" value="yes" required> yes
+              </label>
+              <label>
+                  <input type="radio" name="coupons" value="no" required> no
+              </label>
+          </div>
+
+          <p>Would you like to sign up for our rewards program, Plant Perks?</p>
+          <div class="radio-group">
+              <label>
+                  <input type="radio" name="rewards" value="yes" required> yes
+              </label>
+              <label>
+                  <input type="radio" name="rewards" value="no" required> no
+              </label>
+          </div>
+
+          <button type="submit">Submit</button>
+      </form>
+      <span class="close-btn" onclick="closeNewsletter()">×</span>
+  </div>
+</div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -193,6 +302,7 @@
       </div>
     </section>
     
+    
 
     <!-- Content Section: Gardening in Colorado -->
     <section class="gardening-in-co">
@@ -278,7 +388,30 @@
               <a href="https://www.pinterest.com/echters/" target="_blank"><img src="./images/PINTEREST.png" alt="Pinterest"></a>
           </div>
           
-          
+          <script>
+            function toggleSearch() {
+                const searchBar = document.querySelector('.search-bar');
+                searchBar.classList.toggle('hidden');
+            }
+        
+            document.addEventListener('click', function(event) {
+                const searchBar = document.querySelector('.search-bar');
+                const searchIcon = document.getElementById('search-icon');
+        
+                if (!searchBar.classList.contains('hidden') && !searchBar.contains(event.target) && !searchIcon.contains(event.target)) {
+                    searchBar.classList.add('hidden');
+                }
+            });
+        
+            document.getElementById('newsletter-btn').addEventListener('click', function() {
+                document.getElementById('newsletter-overlay').classList.remove('hidden');
+            });
+        
+            function closeNewsletter() {
+                document.getElementById('newsletter-overlay').classList.add('hidden');
+            }
+        </script>
+        
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -298,6 +431,7 @@
                 searchBar.classList.add('hidden');
             }
         });
+
     </script>
 </body>
 </html>

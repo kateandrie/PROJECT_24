@@ -32,4 +32,17 @@ window.addEventListener('click', function (e) {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    function checkScroll() {
+      const section = document.querySelector('.gardening-in-co');
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        section.classList.add('scrolled-in-view');
+      }
+    }
+  
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Check on page load
+  });
 
+  
