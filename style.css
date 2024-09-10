@@ -526,3 +526,62 @@ footer {
     max-height: 400px;
   }
 }
+
+/*animation with icons*/
+body1 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  overflow: hidden;
+}
+
+.plant-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.plant {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+}
+
+.plant1 {
+  left: 0;
+  animation: movePlant 7s linear infinite;
+}
+
+.plant2 {
+  left: 0;
+  animation: movePlant 10s linear infinite;
+}
+
+.plant3 {
+  left: 0;
+  animation: movePlant 15s linear infinite;
+}
+.plant4 {
+  left: 0;
+  animation: movePlant 20s linear infinite;
+}
+.plant5 {
+  left: 0;
+  animation: movePlant 25s linear infinite;
+}
+.plant6 {
+  left: 0;
+  animation: movePlant 18s linear infinite;
+}
+
+@keyframes movePlant {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+}

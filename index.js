@@ -45,4 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     checkScroll(); // Check on page load
   });
 
+  /*animation with icons*/
+document.addEventListener("DOMContentLoaded", () => {
+    const plants = document.querySelectorAll(".plant");
+ 
+    plants.forEach(plant => {
+      plant.style.top = Math.random() * 50 + "%"; // Randomize the initial vertical position
+    });
+  });
   
