@@ -93,6 +93,12 @@ body {
   display: none;
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Hero Section */
 .hero {
   text-align: center;
@@ -103,6 +109,7 @@ body {
 .hero h1 {
   font-size: 3em;
   color: #20302c;
+  margin-bottom: 20px; 
 }
 
 .hero p {
@@ -115,20 +122,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
-}
-
-.dropdown-toggle {
-  font-size: 1.2em;
-  text-decoration: none;
-  color: #4e6e50;
-  padding: 10px 20px;
-  background-color: #f8f8f8;
-  border-radius: 30px; 
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-toggle:hover {
-  background-color: #e0e0e0;
 }
 
 /* Dropdown */
@@ -151,7 +144,6 @@ body {
 .dropdown .dropdown-toggle:hover {
   background-color: #2b3734;
 }
-
 
 /* Dropdown Menu */
 .dropdown .dropdown-menu {
@@ -314,6 +306,17 @@ body {
   border-radius: 30px; 
 }
 
+/* General Image Hover Effect */
+img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
 /* Shop Our Summer Sale Section */
 h2 {
   font-size: 2.5em;
@@ -329,9 +332,6 @@ h2 {
   margin-bottom: 20px;
   border-radius: 30px; 
 }
-
-
-
 
 /* Newsletter Signup Section */
 .signup-form {
@@ -384,6 +384,54 @@ h2 {
   font-size: 18px;
   color: #333;
 }
+
+/* Contact Section */
+.contact-section {
+  background-color: #ffffff;
+  padding: 40px 20px; 
+  border-radius: 10px; 
+  margin-bottom: 0px; 
+}
+
+.contact-section h2 {
+  font-size: 2.5em; 
+  color: #4e6e50; 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em; 
+  align-items: center;
+  gap: 20px; 
+}
+
+.contact-info div {
+  text-align: center; 
+}
+
+.contact-info h3 {
+  font-size: 1.5em; 
+  color: #20302c; 
+  margin-bottom: 10px; 
+}
+
+.contact-info p {
+  font-size: 1.1em; 
+  color: #4e6e50; 
+  margin: 5px 0; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 20px; /* Adjust padding on smaller screens */
+  }
+}
+
+
 
 /* Footer Section */
 footer {
